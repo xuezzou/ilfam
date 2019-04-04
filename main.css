@@ -1,16 +1,16 @@
 #wrapper {
-    width: 600px;
-    margin: 50px auto;
+    width: 25em;
+    margin: 3.3em auto;
   }
-  
+
   body {
     font-family: Helvetica;
     background: #fff;
   }
   
   .chat ul {
-    margin: 0px;
-    padding: 0px;
+    margin: 0em;
+    padding: 0em;
     list-style: none;
   }
   
@@ -18,8 +18,8 @@
     display: block;
     font-size: 12px;
     text-align: left;
-    padding-left: 30px;
-    padding-top: 4px;
+    padding-left: 1.3em;
+    padding-top: 0.3em;
     color: #ccc;
     font-family: Courier;
   }
@@ -28,57 +28,57 @@
     display: block;
     font-size: 12px;
     text-align: right;
-    padding-right: 20px;
-    padding-top: 4px;
+    padding-right: 1.3em;
+    padding-top: 0.3em;
     color: #ccc;
     font-family: Courier;
   }
   
   .message-left {
     text-align: left;
-    margin-bottom: 16px;
+    margin-bottom: 1em;
   }
   
   .message-left .message-text {
     max-width: 80%;
     display: inline-block;
     background: #fff;
-    padding: 15px;
+    padding: 1em;
     font-size: 14px;
     color: #999;
-    border-radius: 30px;
+    border-radius: 2em;
     font-weight: 100;
     line-height: 1.5em;
   }
   
   .message-right {
     text-align: right;
-    margin-bottom: 16px;
+    margin-bottom: 1em;
   }
   
   .message-right .message-text {
     line-height: 1.5em;
     display: inline-block;
     background: #5ca6fa;
-    padding: 15px;
+    padding: 1em;
     font-size: 14px;
     color: #fff;
-    border-radius: 30px;
+    border-radius: 2em;
     line-height: 1.5em;
     font-weight: 100;
     text-align: left;
   }
   
   .chat {
-    border-radius: 30px;
-    padding: 20px;
+    border-radius: 2em;
+    padding: 1.25em;
     background: #f5f7fa;
   }
   
   .chat-container {
-    height: 500px;
+    height: 40em;
     overflow-y: scroll;
-    padding-right: 16px;
+    /* padding-right: 1em; */
   }
   
   .spinme-right {
@@ -138,7 +138,7 @@
       -webkit-transform: scale(1.0)
     }
   }
-  
+
   @keyframes sk-bouncedelay {
     0%,
     80%,
@@ -151,3 +151,11 @@
       transform: scale(1.0);
     }
   }
+
+  @media only screen and (max-width: 600px) {
+    #wrapper{
+      width: 90vw !important;
+      height: 80vh !important;
+    }
+  }
+  
