@@ -155,7 +155,9 @@
   @media only screen and (max-width: 600px) {
     #wrapper{
       width: 90vw !important;
-      height: 80vh !important;
+    }
+    .chat-container{
+      height: 60vh !important;
     }
   }
   
