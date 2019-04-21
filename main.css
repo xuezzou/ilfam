@@ -1,161 +1,205 @@
 #wrapper {
-    width: 25em;
-    margin: 3.3em auto;
-  }
+  width: 25em;
+  margin: 3.3em auto;
+}
 
-  body {
-    font-family: Helvetica;
-    background: #fff;
-  }
-  
-  .chat ul {
-    margin: 0em;
-    padding: 0em;
-    list-style: none;
-  }
-  
-  .message-left .message-time {
-    display: block;
-    font-size: 12px;
-    text-align: left;
-    padding-left: 1.3em;
-    padding-top: 0.3em;
-    color: #ccc;
-    font-family: Courier;
-  }
-  
-  .message-right .message-time {
-    display: block;
-    font-size: 12px;
-    text-align: right;
-    padding-right: 1.3em;
-    padding-top: 0.3em;
-    color: #ccc;
-    font-family: Courier;
-  }
-  
-  .message-left {
-    text-align: left;
-    margin-bottom: 1em;
-  }
-  
-  .message-left .message-text {
-    max-width: 80%;
-    display: inline-block;
-    background: #fff;
-    padding: 1em;
-    font-size: 14px;
-    color: #999;
-    border-radius: 2em;
-    font-weight: 100;
-    line-height: 1.5em;
-  }
-  
-  .message-right {
-    text-align: right;
-    margin-bottom: 1em;
-  }
-  
-  .message-right .message-text {
-    line-height: 1.5em;
-    display: inline-block;
-    background: #5ca6fa;
-    padding: 1em;
-    font-size: 14px;
-    color: #fff;
-    border-radius: 2em;
-    line-height: 1.5em;
-    font-weight: 100;
-    text-align: left;
-  }
-  
-  .chat {
-    border-radius: 2em;
-    padding: 1.25em;
-    background: #f5f7fa;
-  }
-  
-  .chat-container {
-    height: 40em;
-    overflow-y: scroll;
-    /* padding-right: 1em; */
-  }
-  
-  .spinme-right {
-    display: inline-block;
-    padding: 15px 20px;
-    font-size: 14px;
-    border-radius: 30px;
-    line-height: 1.25em;
-    font-weight: 100;
-    opacity: 0.2;
-  }
-  
-  .spinme-left {
-    display: inline-block;
-    padding: 15px 20px;
-    font-size: 14px;
-    color: #ccc;
-    border-radius: 30px;
-    line-height: 1.25em;
-    font-weight: 100;
-    opacity: 0.2;
-  }
-  
-  .spinner {
-    margin: 0;
-    width: 30px;
-    text-align: center;
-  }
-  
-  .spinner > div {
-    width: 10px;
-    height: 10px;
-    border-radius: 100%;
-    display: inline-block;
-    -webkit-animation: sk-bouncedelay 1.4s infinite ease-in-out both;
-    animation: sk-bouncedelay 1.4s infinite ease-in-out both;
-    background: rgba(0,0,0,1);
-  }
-   
-  .spinner .bounce1 {
-    -webkit-animation-delay: -0.32s;
-    animation-delay: -0.32s;
-  }
-  
-  .spinner .bounce2 {
-    -webkit-animation-delay: -0.16s;
-    animation-delay: -0.16s;
-  }
-  
-  @-webkit-keyframes sk-bouncedelay {
-    0%,
-    80%,
-    100% {
-      -webkit-transform: scale(0)
-    }
-    40% {
-      -webkit-transform: scale(1.0)
-    }
-  }
+body {
+  font-family: Helvetica;
+  background: #fff;
+}
 
-  @keyframes sk-bouncedelay {
-    0%,
-    80%,
-    100% {
-      -webkit-transform: scale(0);
-      transform: scale(0);
-    }
-    40% {
-      -webkit-transform: scale(1.0);
-      transform: scale(1.0);
-    }
-  }
+.chat ul {
+  margin: 0em;
+  padding: 0em;
+  list-style: none;
+}
 
-  @media only screen and (max-width: 600px) {
-    #wrapper{
-      width: 90vw !important;
-      height: 80vh !important;
-    }
+.user-chat {
+  /* display: block; */
+  /* padding-left: 1em !important; */
+  /* color: #999;
+  font-weight: 100;
+  line-height: 1.5em;
+  font-size: 14px; */
+}
+
+.user-message {
+  margin-top: 1em;
+  display: inline-block;
+  font-size: 14px;
+  line-height: 1.5em;
+  padding: 1em;
+  border-radius: 2em;
+  line-height: 1em;
+  font-weight: 100;
+  text-align: left;
+  color: #999;
+  border-color: rgba(153, 153, 153, 0.3);
+  border-style: solid;
+  border-width: .08em;
+  width: 23em;
+  height: 1em;
+}
+
+.user-message:hover {
+  color: #ccc;
+  cursor: pointer;
+}
+
+.message-left .message-time {
+  display: block;
+  font-size: 12px;
+  text-align: left;
+  padding-left: 1.1em;
+  padding-top: 0.3em;
+  color: #ccc;
+  font-family: Courier;
+}
+
+.message-right .message-time {
+  display: block;
+  font-size: 12px;
+  text-align: right;
+  padding-right: 1.1em;
+  padding-top: 0.3em;
+  color: #ccc;
+  font-family: Courier;
+}
+
+.message-left {
+  text-align: left;
+  margin-bottom: 1em;
+}
+
+.message-left .message-text {
+  max-width: 80%;
+  display: inline-block;
+  background: #fff;
+  padding: 1em;
+  font-size: 14px;
+  color: #999;
+  border-radius: 2em;
+  font-weight: 100;
+  line-height: 1.5em;
+}
+
+.message-right {
+  text-align: right;
+  margin-bottom: 1em;
+}
+
+.message-right .message-text {
+  line-height: 1.5em;
+  display: inline-block;
+  background: #5ca6fa;
+  padding: 1em;
+  font-size: 14px;
+  color: #fff;
+  border-radius: 2em;
+  line-height: 1.5em;
+  font-weight: 100;
+  text-align: left;
+}
+
+.chat {
+  border-radius: 2em;
+  padding: 1.25em;
+  background: #f5f7fa;
+}
+
+.chat-container {
+  height: 30em;
+  overflow-y: scroll;
+  /* padding-right: 1em; */
+}
+
+.spinme-right {
+  display: inline-block;
+  padding: 15px 20px;
+  font-size: 14px;
+  border-radius: 30px;
+  line-height: 1.25em;
+  font-weight: 100;
+  opacity: 0.2;
+}
+
+.spinme-left {
+  display: inline-block;
+  padding: 15px 20px;
+  font-size: 14px;
+  color: #ccc;
+  border-radius: 30px;
+  line-height: 1.25em;
+  font-weight: 100;
+  opacity: 0.2;
+}
+
+.spinner {
+  margin: 0;
+  width: 30px;
+  text-align: center;
+}
+
+.spinner>div {
+  width: 10px;
+  height: 10px;
+  border-radius: 100%;
+  display: inline-block;
+  -webkit-animation: sk-bouncedelay 1.4s infinite ease-in-out both;
+  animation: sk-bouncedelay 1.4s infinite ease-in-out both;
+  background: rgba(0, 0, 0, 1);
+}
+
+.spinner .bounce1 {
+  -webkit-animation-delay: -0.32s;
+  animation-delay: -0.32s;
+}
+
+.spinner .bounce2 {
+  -webkit-animation-delay: -0.16s;
+  animation-delay: -0.16s;
+}
+
+@-webkit-keyframes sk-bouncedelay {
+  0%, 80%, 100% {
+    -webkit-transform: scale(0)
   }
-  
+  40% {
+    -webkit-transform: scale(1.0)
+  }
+}
+
+@keyframes sk-bouncedelay {
+  0%, 80%, 100% {
+    -webkit-transform: scale(0);
+    transform: scale(0);
+  }
+  40% {
+    -webkit-transform: scale(1.0);
+    transform: scale(1.0);
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  #wrapper {
+    width: 90vw !important;
+    height: 60vh !important;
+  }
+}
+
+/* styling for link */
+
+a, a:visited {
+  color: pink;
+  text-decoration: none;
+}
+
+a:hover {
+  color: lightblue;
+  text-decoration: none;
+}
+
+a:active {
+  color: violet;
+  text-decoration: none;
+}
