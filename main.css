@@ -37,7 +37,7 @@ body {
   border-color: rgba(153, 153, 153, 0.3);
   border-style: solid;
   border-width: .08em;
-  width: 23em;
+  width: 88%;
   height: 1em;
 }
 
@@ -185,6 +185,7 @@ body {
     width: 90vw !important;
     height: 60vh !important;
   }
+  
 }
 
 /* styling for link */

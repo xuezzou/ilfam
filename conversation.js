@@ -1,7 +1,21 @@
 // messages
 let greeting = [{
-  name: "last",
+  name: "ee",
   msg: "Nice to meet you :-D",
+  delay: 500,
+  align: "left",
+  showTime: true,
+  time: "19:58"
+}, {
+  name: "ee",
+  msg: "One day ",
+  delay: 1000,
+  align: "left",
+  showTime: false,
+  time: "19:58"
+}, {
+  name: "last",
+  msg: "You'll have stars that can laugh",//🌟
   delay: 500,
   align: "left",
   showTime: true,
@@ -20,6 +34,20 @@ let choiceWhoAmI = [{
 let whoAmI = [{
   name: "ms1",
   msg: "A piano player who can't write good code and good poetry",
+  delay: 500,
+  align: "left",
+  showTime: false,
+  time: "19:58"
+}, {
+  name: "ms1",
+  msg: "And...",
+  delay: 500,
+  align: "left",
+  showTime: false,
+  time: "19:58"
+}, {
+  name: "ms1",
+  msg: "A reed who does not want to die of thirst",
   delay: 500,
   align: "left",
   showTime: false,
@@ -156,6 +184,53 @@ let storyNorwegianWood = [{
   time: "19:58"
 }];
 
+let storyLittlePrince = [{
+  name: "ee",
+  msg: "One day",
+  delay: 500,
+  align: "left",
+  showTime: false,
+  time: "19:58"
+}, {
+  name: "dd",
+  msg: "I saw the sunset forty-four times",
+  delay: 500,
+  align: "left",
+  showTime: true,
+  time: "19:58"
+}, {
+  name: "last",
+  msg: "...",
+  delay: 500,
+  align: "right",
+  showTime: true,
+  time: "19:58"
+}];
+
+
+let quoteTrumanCaopte = [
+  {
+    name: "hey",
+    msg: "Think of nothing things",
+    delay: 1000,
+    align: "left",
+    showTime: false,
+    time: "19:58"
+  }, {
+    name: "hey",
+    msg: "Think of wind",
+    delay: 1000,
+    align: "left",
+    showTime: true,
+    time: "19:58"
+  }, {
+    name: "last",
+    msg: "--Truman Capote, Shut a Final Door",
+    delay: 1500,
+    align: "left",
+    showTime: true,
+    time: "19:58"
+  }];
 
 // loading the 
 
@@ -170,7 +245,7 @@ let chatDelay = 0; // chatDelay var that controls the time of display of message
 
 function displayMessages(chatArea, chatMessages) {
   $.each(chatMessages, function (index, obj) {
-    // chatDelay = chatDelay + 2000; // control the gerneral delayed time
+    chatDelay = chatDelay + 1000; // control the gerneral delayed time
     let chatDelay2 = chatDelay + obj.delay;
     let chatDelay3 = chatDelay2 + 10;
     // let scrollDelay = chatDelay;
@@ -199,7 +274,7 @@ function displayMessages(chatArea, chatMessages) {
           $(this).html(choiceTellAStory[0].msg);
         }
         choieOption = choieOption + 1;
-        
+
 
         n();
       });
@@ -228,7 +303,7 @@ $('.user-message').on("click", function () {
     displayMessages(".chat-message-list", whoAmI);
   } else if (this.innerText === choiceTellAStory[0].msg) {
     displayMessages(".chat-message-list", choiceTellAStory);
-    displayMessages(".chat-message-list", storyNorwegianWood);
+    displayMessages(".chat-message-list", storyLittlePrince);
   } else {
     // again the conversation
   }
