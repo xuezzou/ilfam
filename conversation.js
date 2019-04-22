@@ -4,16 +4,18 @@ let greeting = [{
   msg: "Nice to meet you :-D",
   delay: 500,
   align: "left",
-  showTime: true,
-  time: "19:58"
-}, {
-  name: "ee",
-  msg: "One day ",
-  delay: 1000,
-  align: "left",
   showTime: false,
   time: "19:58"
-}, {
+},
+// {
+//   name: "ee",
+//   msg: "One day ",
+//   delay: 1000,
+//   align: "left",
+//   showTime: false,
+//   time: "19:58"
+// }, 
+{
   name: "last",
   msg: "You'll have stars that can laugh",//🌟
   delay: 500,
@@ -199,13 +201,43 @@ let storyLittlePrince = [{
   showTime: true,
   time: "19:58"
 }, {
-  name: "last",
+  name: "notlast",
   msg: "...",
   delay: 500,
   align: "right",
   showTime: true,
   time: "19:58"
-}];
+}, {
+  name: "notlast",
+  msg: "You know-- one loves the sunset",
+  delay: 1500,
+  align: "left",
+  showTime: false,
+  time: "19:58"
+}, {
+  name: "last",
+  msg: "when one is so sad...",
+  delay: 500,
+  align: "left",
+  showTime: false,
+  time: "19:58"
+},
+  //  {
+  //   name: "last",
+  //   msg: "Were you so sad, then?",
+  //   delay: 500,
+  //   align: "right",
+  //   showTime: false,
+  //   time: "19:58"
+  // }, {
+  //   name: "last",
+  //   msg: "...",
+  //   delay: 500,
+  //   align: "left",
+  //   showTime: false,
+  //   time: "19:58"
+  //}
+];
 
 
 let quoteTrumanCaopte = [
@@ -270,8 +302,11 @@ function displayMessages(chatArea, chatMessages) {
       $(".user-message").delay(chatDelay3 + 1000).queue(function (n) {
         if (choieOption % 2 === 0) {
           $(this).html(choiceWhoAmI[0].msg);
+          $(this).css("cursor", "pointer");
         } else if (choieOption % 2 === 1) {
           $(this).html(choiceTellAStory[0].msg);
+          $(this).css("cursor", "pointer");
+
         }
         choieOption = choieOption + 1;
 
@@ -301,14 +336,18 @@ $('.user-message').on("click", function () {
   if (this.innerText === choiceWhoAmI[0].msg) {
     displayMessages(".chat-message-list", choiceWhoAmI);
     displayMessages(".chat-message-list", whoAmI);
+
+    $(this).html("...");
+    $(this).css("cursor", "text");
   } else if (this.innerText === choiceTellAStory[0].msg) {
     displayMessages(".chat-message-list", choiceTellAStory);
     displayMessages(".chat-message-list", storyLittlePrince);
+
+    $(this).html("...");
+    $(this).css("cursor", "text");
   } else {
     // again the conversation
   }
-  $(this).html("Say something...");
-  // $(this).off('hover');
 
 
 });
