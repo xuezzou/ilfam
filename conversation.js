@@ -272,7 +272,7 @@ function onRowAdded() {
     scrollTop: $('.chat-container').prop('scrollHeight')
   });
 };
-let choieOption = 0; // a global variable that controls the flow 
+let choiceOption = 0; // a global variable that controls the flow 
 let chatDelay = 0; // chatDelay var that controls the time of display of messages
 
 function displayMessages(chatArea, chatMessages) {
@@ -298,23 +298,35 @@ function displayMessages(chatArea, chatMessages) {
     chatDelay = chatDelay3;
 
     if (index === chatMessages.length - 1 && obj.name === "last") {
-      // choieOption++;
       $(".user-message").delay(chatDelay3 + 1000).queue(function (n) {
-        if (choieOption % 2 === 0) {
+        if (choiceOption % 2 === 0) {
+          // autoType(".type-js",200);
           $(this).html(choiceWhoAmI[0].msg);
-          $(this).css("cursor", "pointer");
-        } else if (choieOption % 2 === 1) {
+          autoType(".type-js", 100);
+          isMessaging = false;
+          console.log(isMessaging + "display");
+          // $(this).css("pointer-events", "auto");
+          // $(this).css("cursor", "pointer");
+
+        } else if (choiceOption % 2 === 1) {
           $(this).html(choiceTellAStory[0].msg);
-          $(this).css("cursor", "pointer");
+          autoType(".type-js", 100);
+          isMessaging = false;
+          console.log(isMessaging + "display");
+
+          // $(this).css("pointer-events", "auto");
+          // $(this).css("cursor", "pointer");
+
+
 
         }
-        choieOption = choieOption + 1;
+        choiceOption = choiceOption + 1;
 
 
         n();
       });
       // $(".userMessage").delay(chatDelay3 + 1000)
-      console.log(choieOption);
+      console.log(choiceOption);
       console.log('last one' + chatDelay3);
       //chatDelay3 + 1000
     }
@@ -331,25 +343,82 @@ function loadingConversation() {
   // displayMessages(".user-chat", choiceWhoAmI);
 };
 
+let isMessaging = false;
+
 $('.user-message').on("click", function () {
-  chatDelay = 0;
-  if (this.innerText === choiceWhoAmI[0].msg) {
-    displayMessages(".chat-message-list", choiceWhoAmI);
-    displayMessages(".chat-message-list", whoAmI);
-
-    $(this).html("...");
-    $(this).css("cursor", "text");
-  } else if (this.innerText === choiceTellAStory[0].msg) {
-    displayMessages(".chat-message-list", choiceTellAStory);
-    displayMessages(".chat-message-list", storyLittlePrince);
-
-    $(this).html("...");
-    $(this).css("cursor", "text");
+  if (isMessaging) {
+    console.log('is messaging...');
   } else {
-    // again the conversation
-  }
+    // event.stopPropagation();
 
+    chatDelay = 0;
+    if (this.innerText === choiceWhoAmI[0].msg) {
+      displayMessages(".chat-message-list", choiceWhoAmI);
+      displayMessages(".chat-message-list", whoAmI);
+
+      isMessaging = true;
+      console.log('click' + isMessaging);
+
+
+
+      // $(this).html("...");
+      // $(this).css("pointer-events", "none");
+
+      $(this).css("cursor", "text");
+
+
+    } else if (this.innerText === choiceTellAStory[0].msg) {
+      displayMessages(".chat-message-list", choiceTellAStory);
+      displayMessages(".chat-message-list", storyLittlePrince);
+
+      isMessaging = true;
+
+      console.log('click' + isMessaging);
+
+      // $(this).html("...");
+      // $(this).css("pointer-events", "none");
+      $(this).css("cursor", "text");
+    } else {
+      // again the conversation
+    }
+  }
 
 });
 
 loadingConversation();
+
+
+
+
+function autoType(elementClass, typingSpeed) {
+  var thhis = $(elementClass);
+  thhis.css({
+    // "position": "relative",
+    // "display": "inline-block"
+  });
+  // thhis.prepend('<div class="cursor" style="right: initial; left:0;"></div>');
+  thhis = thhis.find(".text-js");
+  var text = thhis.text().trim().split('');
+  var amntOfChars = text.length;
+  var newString = "";
+  thhis.text("|");
+  setTimeout(function () {
+    thhis.css("opacity", 1);
+    // thhis.prev().removeAttr("style");
+    thhis.text("");
+    for (var i = 0; i < amntOfChars; i++) {
+      (function (i, char) {
+        setTimeout(function () {
+          newString += char;
+          thhis.text(newString);
+          if (i === amntOfChars - 1) {
+            $(".user-message").css("cursor", "pointer");
+
+          }
+        }, i * typingSpeed);
+      })(i + 1, text[i]);
+    }
+
+  }, 1500);
+
+}
