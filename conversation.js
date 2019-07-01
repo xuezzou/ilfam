@@ -63,7 +63,7 @@ let whoAmI = [{
   time: "19:58"
 }, {
   name: "last",
-  msg: "And my <a target='_blank' href='xue_zou_resume_Dec18.pdf'>resume</a> if you are interested <br/> (๑¯◡¯๑)",
+  msg: "And my <a target='_blank' href='xue_zou_resume_July1.pdf'>resume</a> if you are interested <br/> (๑¯◡¯๑)",
   delay: 500,
   align: "left",
   showTime: true,
@@ -165,7 +165,7 @@ function displayMessages(chatArea, chatMessages) {
     setTimeout(onRowAdded, chatDelay);
     setTimeout(onRowAdded, chatDelay3);
     chatDelay = chatDelay3;
-    // display user option is is the last one
+    // display user option if is the last one
     displayUserOption(chatDelay3, index, obj, chatMessages);
   });
 }
@@ -207,7 +207,7 @@ $('.user-message').on("click", function () {
   }
 });
 
-// styping effect
+// typing effect
 function autoType(elementClass, typingSpeed) {
   var thhis = $(elementClass);
   thhis = thhis.find(".text-js");
