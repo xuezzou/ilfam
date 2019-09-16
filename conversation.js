@@ -94,27 +94,28 @@ let storyLittlePrince = [{
   showTime: false,
   time: "19:58"
 }, {
-  name: "notlast",
+  name: "last",
   msg: "...",
   delay: 500,
   align: "right",
   showTime: false,
   time: "19:58"
-}, {
-  name: "notlast",
-  msg: "You know, one loves the sunset",
-  delay: 1500,
-  align: "left",
-  showTime: false,
-  time: "19:58"
-}, {
-  name: "last",
-  msg: "when one is so sad...",
-  delay: 500,
-  align: "left",
-  showTime: true,
-  time: "20:08"
-}
+},
+//  {
+//   name: "notlast",
+//   msg: "You know, one loves the sunset",
+//   delay: 1500,
+//   align: "left",
+//   showTime: false,
+//   time: "19:58"
+// }, {
+//   name: "last",
+//   msg: "when one is so sad...",
+//   delay: 500,
+//   align: "left",
+//   showTime: true,
+//   time: "20:08"
+// }
   // ,{
   //   name: "last",
   //   msg: "Were you so sad, then?",
