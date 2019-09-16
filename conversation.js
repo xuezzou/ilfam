@@ -63,7 +63,7 @@ let whoAmI = [{
   time: "19:58"
 }, {
   name: "last",
-  msg: "And my <a target='_blank' href='xue_zou_resume_July11.pdf'>resume</a> if you are interested <br/> (๑¯◡¯๑)",
+  msg: "And my <a target='_blank' href='xue_zou_resume_Sep.pdf'>resume</a> if you are interested <br/> (๑¯◡¯๑)",
   delay: 500,
   align: "left",
   showTime: true,
