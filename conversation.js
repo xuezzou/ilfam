@@ -226,6 +226,7 @@ function autoType(elementClass, typingSpeed) {
           thhis.text(newString);
           if (i === amntOfChars - 1) {
             $(".user-message").css("cursor", "pointer");
+            $(".user-message").css("font-weight", "bold");
           }
         }, i * typingSpeed);
       })(i + 1, text[i]);
